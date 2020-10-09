@@ -1,9 +1,10 @@
 // Write your Character component here
 import React, {useEffect, useState} from 'react';
-import CharCard from './CharCard'
-import Header from './Header'
 import axios from 'axios';
 import styled from 'styled-components'
+import CharCard from './CharCard'
+import Header from './Header'
+
 
 const Card = styled.section`
     /* display: flex;

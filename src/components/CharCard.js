@@ -7,10 +7,25 @@ const InfoCard = styled.div`
     padding: 2%;
     background: #95A068;
     border-radius: 10px;
+
+    @media (min-width: 300px){
+        display: flex;
+        flex-direction: column;
+    }
 `;
 
 const Information = styled.section`
     margin: 5%;
+    width: 100%;
+`;
+
+const ImgSection = styled.section`
+    display: flex;
+    align-items: center;
+`;
+
+
+const Img = styled.img`
     width: 100%;
 `;
 
@@ -21,11 +36,12 @@ const P = styled.p`
 
 const CharCard = ({characters}) => {
     console.log(characters.name)
+
     return (
         <InfoCard>
-            <section>
-                <img src={characters.image} alt=""/>
-            </section>
+            <ImgSection>
+                <Img src={characters.image} alt=""/>
+            </ImgSection>
             <Information>
                 <P>Name: {characters.name}</P>
                 <P>Status: {characters.status}</P>

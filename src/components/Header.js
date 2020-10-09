@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import img from '../images/rickandmorty-back.jpg'
+import Media from 'react-responsive'
 
 const H1 = styled.h1`
     color: #F9F674;
@@ -13,6 +14,10 @@ const H1 = styled.h1`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media (min-width: 300px){
+        font-size: 1.5rem;
+    }
 `;
 
 
