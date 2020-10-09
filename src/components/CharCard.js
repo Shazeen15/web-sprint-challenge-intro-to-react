@@ -8,7 +8,7 @@ const InfoCard = styled.div`
     background: #95A068;
     border-radius: 10px;
 
-    @media (min-width: 300px){
+    @media (max-width: 500px){
         display: flex;
         flex-direction: column;
     }

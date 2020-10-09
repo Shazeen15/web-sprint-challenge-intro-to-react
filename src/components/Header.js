@@ -15,7 +15,7 @@ const H1 = styled.h1`
     background-position: center;
     background-size: cover;
 
-    @media (min-width: 300px){
+    @media (max-width: 500px){
         font-size: 1.5rem;
     }
 `;
