@@ -8,7 +8,8 @@ import CharacterDetails from './CharacterDetails'
 
 const Character = (props) => {
     const [characters, setCharacters] = useState([]);
-    const [currentCharacterId, setCurrentCharacterId] = useState("");
+    const [currentCharacterId, setCurrentCharacterId] = useState("1");
+    const[page, setPage] = useState('1');
 
     const openDetails = (id) => {
         setCurrentCharacterId(id);
@@ -18,7 +19,7 @@ const Character = (props) => {
         setCurrentCharacterId(null);
     };
 
-    let characterLink = `https://rickandmortyapi.com/api/character/`;
+    let characterLink = `https://rickandmortyapi.com/api/character/?page=${page}`;
     const EffectFn = () => {
         axios.get(characterLink)
         .then((res) => {
@@ -31,9 +32,9 @@ const Character = (props) => {
     }
     useEffect(EffectFn, [])
 
-    // const nextPage = () => {
-    //     characterLink = `https://rickandmortyapi.com/api/character/?page=2`
-    // }
+    const nextPage = () => {
+        setPage(page + 1);
+    }
     return (
         <div>
             <Header/>
@@ -46,7 +47,7 @@ const Character = (props) => {
                 {currentCharacterId && (
                 <CharacterDetails characterId={currentCharacterId} close={closeDetails} />
                 )}
-                {/* <button onClick={nextPage}>Next Page</button> */}
+                <button onClick={nextPage}>Next Page</button>
             </div>
             
         </div>
