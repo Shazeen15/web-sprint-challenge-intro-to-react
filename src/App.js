@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import Characters from './components/Character';
+import Character from './components/Character';
 
 const App = () => {
 
   return (
     <div className="App">
-      <Characters/>
+      <Character/>
     </div>
   );
 }
 
 export default App;
- 
