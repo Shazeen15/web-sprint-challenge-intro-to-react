@@ -20,20 +20,22 @@ const Character = (props) => {
     };
 
     let characterLink = `https://rickandmortyapi.com/api/character/?page=${page}`;
+    console.log(characterLink)
     const EffectFn = () => {
         axios.get(characterLink)
         .then((res) => {
             let CharList = res.data.results;
             setCharacters(CharList);
+            console.log(CharList);
         })
         .catch((err) => {
             return err;
         })
     }
-    useEffect(EffectFn, [])
+    useEffect(EffectFn, [page]);
 
     const nextPage = () => {
-        setPage(page + 1);
+        setPage(Number(page) + 1);
     }
     return (
         <div>

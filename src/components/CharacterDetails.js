@@ -40,7 +40,6 @@ export default function CharacterDetails({characterId, close}){
         axios.get(characterLinkWithId)
         .then((res) => {
             let CharList = res.data;
-            console.log(CharList)
             setDetails(CharList);
         })
         .catch((err) => {
